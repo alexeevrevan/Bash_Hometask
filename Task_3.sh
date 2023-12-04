@@ -10,7 +10,6 @@ display_board(){
 	for ((i=0; i<4; i++)); do
 	        echo -n "|"
 		for ((j=0; j<4; j++)); do
-        	    #echo -n "${board[$i,$j]} "
 			if [ "${board[$i,$j]}" -eq 16 ]; then
                                echo -n "    |"
 			else
