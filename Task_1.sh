@@ -23,8 +23,6 @@ do
 
     case "${user_input}" in
         [0-9])
-#            echo "Valid input"
-#            echo "Input processing started..."
             user_number=$user_input
 
             if [[ $user_number == $random_number ]]
