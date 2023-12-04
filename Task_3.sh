@@ -35,7 +35,6 @@ generate_data() {
         	for ((j=0; j<4; j++)); do
             		board[$i,$j]=${numbers[$ind]}
             		((ind++))
-#			echo ${board[$i,$j]}
         	done
     	done
 }
@@ -69,7 +68,6 @@ move(){
 			done
 		done
 
-#		echo $select_row $select_col
 		for ((i=0; i<4; i++)); do
             		for ((j=0; j<4; j++)); do
                 		if [ "${board[$i,$j]}" -eq 16 ]; then
@@ -78,7 +76,7 @@ move(){
                 		fi
             		done
         	done
-#           	echo $empty_row $empty_col
+	 
 		if [ \
 			\( "$select_row" -eq "$empty_row" -a \
 			\( "$select_col" -eq "$((empty_col-1))" -o "$select_col" -eq "$((empty_col+1))" \) \) \
@@ -122,9 +120,7 @@ win_case(){
         	done
     	done
 	now+="."
-#	echo $now
-#	echo $winning_conditions
-#	echo "Результат сравнения: $( [[ "$now" == "$winning_conditions" ]] && echo "Строка 'now' равна строке 'winning_conditions'" || echo "Строка 'now' не равна строке 'winning_conditions'")"
+ 
     	if [[ "$now" == "$winning_conditions" ]]; then
         	echo "Вы собрали головоломку за $turn ходов."
 		exit 0
